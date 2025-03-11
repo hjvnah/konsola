@@ -12,64 +12,48 @@
 
         int zapasowa = 0;
         bool czykoniec = false;
+        int wynik = 0;
 
-        /*  if ( pierwszaliczba == drugaliczba)
-          {
-              Console.WriteLine("Największy wspólny dzielnik obu liczb to: " + pierwszaliczba);
-          }
-          else
-          {
-              while (koniec )
+        if (pierwszaliczba == drugaliczba)
+        {
+            Console.WriteLine("Największy wspólny dzielnik obu liczb to: " + pierwszaliczba);
+        }
+        else
+        {
+            Dzialanie(drugaliczba, pierwszaliczba, zapasowa, czykoniec, wynik);
+            
+        }
 
-              if (pierwszaliczba > drugaliczba)
-              {
-                  zapasowa = pierwszaliczba - drugaliczba;
-                  if( zapasowa)
-                  {
 
-                  }
-              }
-              else
-              {
-                  zapasowa = drugaliczba - pierwszaliczba;
-                  if (drugaliczba / zapasowa == 0)
-                  {
+    }
 
-                  }
-              }*//
+
+    static void Dzialanie(int drugaliczba, int pierwszaliczba, int zapasowa, bool czykoniec, int wynik)
+    {
+       
 
         do
-        {
-            if (pierwszaliczba == drugaliczba)
-            {
-                zapasowa = pierwszaliczba;
-                czykoniec = false;
-            }
-            else if (pierwszaliczba > drugaliczba)
+        {           
+            if (pierwszaliczba > drugaliczba)
             {
                 zapasowa = pierwszaliczba - drugaliczba;
+                wynik = pierwszaliczba / zapasowa;
                 czykoniec = false;
-                
+
             }
             else if (drugaliczba > pierwszaliczba)
             {
                 zapasowa = drugaliczba - pierwszaliczba;
+                wynik = drugaliczba / zapasowa;
                 czykoniec = false;
             }
-            
-            
-        } while (czykoniec = false);
-            
+            else
+            {
+                czykoniec = true;
+               
+            }
+        } while (czykoniec = false && zapasowa==wynik);
 
-        
-         
-            
-            
-            
-            
-            
-            
-           
-        }
-
+        Console.WriteLine("Największy wspólny dzielnik to: " + zapasowa);
     }
+}
